@@ -8,11 +8,7 @@ class Main extends Component {
   constructor() {
     super()
     this.state = {
-      currentNote: {
-        id: null,
-        title: '',
-        body: '',
-      },
+      currentNote: this.blankNote(),
       notes: [
         {
           id: 1,
@@ -28,8 +24,20 @@ class Main extends Component {
     }
   }
 
+  blankNote = () => {
+    return {
+      id: null,
+      title: '',
+      body: '',
+    }
+  }
+
   setCurrentNote = (note) => {
     this.setState({ currentNote: note })
+  }
+
+  resetCurrentNote = () => {
+    this.setCurrentNote(this.blankNote())
   }
 
   render() {
@@ -38,7 +46,7 @@ class Main extends Component {
         className="Main"
         style={style}
       >
-        <Sidebar />
+        <Sidebar resetCurrentNote={this.resetCurrentNote} />
         <NoteList
           notes={this.state.notes}
           setCurrentNote={this.setCurrentNote}
