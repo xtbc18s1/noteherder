@@ -6,7 +6,7 @@ import newHover from './new-hover.png'
 
 const Sidebar = () => {
   return (
-    <div
+    <nav
       className="Sidebar"
       style={styles.sidebar}
     >
@@ -20,24 +20,35 @@ const Sidebar = () => {
           style={styles.logoImg}
         />
       </div>
-
-      <a href="/notes">
+      <a
+        className="new-note"
+        href="/notes"
+        style={styles.newNote}
+      >
         <img
           src={newHover}
           alt="New note"
+          style={styles.newNoteImg}
         />
         <img
+          className="outline"
           src={newIcon}
           alt="New note"
+          style={styles.newNoteImg}
         />
       </a>
-
-      <div className="SignOut">
-        <button>
-          <i className="fa fa-sign-out"></i>
+      <div
+        className="SignOut"
+        style={styles.signOut}
+      >
+        <button style={styles.button}>
+          <i
+            className="fa fa-sign-out"
+            style={styles.buttonIcon}
+          ></i>
         </button>
       </div>
-    </div>
+    </nav>
   )
 }
 
@@ -58,7 +69,32 @@ const styles = {
   logoImg: {
     width: '3rem',
     paddingLeft: '0.4rem',
-  }
+  },
+  newNote: {
+    marginTop: '2rem',
+    position: 'relative',
+    width: '4rem',
+  },
+  newNoteImg: {
+    position: 'absolute',
+    left: '0',
+    width: '100%',
+    transition: 'opacity 0.25s ease-in-out',
+  },
+  signOut: {
+    position: 'absolute',
+    bottom: '1rem',
+  },
+  button: {
+    backgroundColor: 'transparent',
+    border: '0',
+    color: '#008bf8',
+    cursor: 'pointer',
+    outline: 'none',
+  },
+  buttonIcon: {
+    fontSize: '2rem',
+  },
 }
 
 export default Sidebar
