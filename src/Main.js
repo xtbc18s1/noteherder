@@ -51,7 +51,10 @@ class Main extends Component {
           notes={this.state.notes}
           setCurrentNote={this.setCurrentNote}
         />
-        <NoteForm currentNote={this.state.currentNote} />
+        <NoteForm
+          currentNote={this.state.currentNote}
+          setCurrentNote={this.setCurrentNote}
+        />
       </div>
     )
   }
