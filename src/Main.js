@@ -40,6 +40,15 @@ class Main extends Component {
     this.setCurrentNote(this.blankNote())
   }
 
+  saveNote = (note) => {
+    const notes = [...this.state.notes]
+
+    const i = notes.findIndex(currentNote => currentNote.id === note.id)
+    notes[i] = note
+
+    this.setState({ notes, currentNote: note })
+  }
+
   render() {
     return (
       <div
@@ -53,7 +62,7 @@ class Main extends Component {
         />
         <NoteForm
           currentNote={this.state.currentNote}
-          setCurrentNote={this.setCurrentNote}
+          saveNote={this.saveNote}
         />
       </div>
     )

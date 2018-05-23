@@ -2,11 +2,11 @@ import React from 'react'
 
 import './NoteForm.css'
 
-const NoteForm = ({ currentNote, setCurrentNote }) => {
+const NoteForm = ({ currentNote, saveNote }) => {
   const handleChanges = (ev) => {
     const note = {...currentNote}
     note[ev.target.name] = ev.target.value
-    setCurrentNote(note)
+    saveNote(note)
   }
 
   return (
