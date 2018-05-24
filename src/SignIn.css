@@ -70,7 +70,8 @@
   background-color: #444;
   color: white;
 }
-.SignIn button.github i.fa {
+.SignIn button.github i.fab,
+.SignIn button.github svg {
   font-size: 3rem;
   margin-right: 0.5rem;
 }
