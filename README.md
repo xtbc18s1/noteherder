@@ -1,3 +1,15 @@
+## Day 8 Homework
+
+* Add Google authentication.
+
+### Bonus Credit
+
+* If you're signed in, it briefly shows the `SignIn` component before showing `Main`. Fix that! Try storing `uid` in `localStorage`.
+
+### Super Mega Bonus Credit
+
+* Scope notes by user. Let each user have their own array of notes. (Try changing the _endpoint_ argument to `base.syncState()`.)
+
 ## Day 7 Homework
 
 * Make the delete button work.
