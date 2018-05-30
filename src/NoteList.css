@@ -55,15 +55,19 @@
 .NoteList ul#notes a:first-of-type li .note {
   border-top: none;
 }
-.NoteList ul#notes li:hover {
+.NoteList ul#notes li:hover,
+.NoteList ul#notes a.active li {
   background-color: #008bf8;
 }
 .NoteList ul#notes li:hover,
-.NoteList ul#notes li:hover .note * {
+.NoteList ul#notes li:hover .note *,
+.NoteList ul#notes a.active li,
+.NoteList ul#notes a.active li .note * {
   color: #fff!important;
   text-decoration: none !important;
 }
-.NoteList ul#notes li:hover .note {
+.NoteList ul#notes li:hover .note,
+.NoteList ul#notes a.active li .note {
   border-color: transparent;
 }
 .NoteList ul#notes li .note-title {
