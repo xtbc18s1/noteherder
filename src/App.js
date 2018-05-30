@@ -11,7 +11,7 @@ class App extends Component {
     uid: null,
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const uid = localStorage.getItem('uid')
     if (uid) {
       this.setState({ uid })
