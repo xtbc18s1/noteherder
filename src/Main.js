@@ -40,12 +40,14 @@ class Main extends React.Component {
   }
 
   saveNote = (note) => {
+    let shouldRedirect = false
     const notes = [...this.state.notes]
 
     if (!note.id) {
       // new note
       note.id = Date.now()
       notes.push(note)
+      shouldRedirect = true
     } else {
       // existing note
       const i = notes.findIndex(currentNote => currentNote.id === note.id)
@@ -53,7 +55,10 @@ class Main extends React.Component {
     }
 
     this.setState({ notes })
-    this.setCurrentNote(note)
+
+    if (shouldRedirect) {
+      this.props.history.push(`/notes/${note.id}`)
+    }
 }
 
   removeCurrentNote = () => {
@@ -79,7 +84,6 @@ class Main extends React.Component {
     return (
       <div className="Main" style={style}>
         <Sidebar
-          resetCurrentNote={this.resetCurrentNote}
           signOut={this.props.signOut}
         />
         <NoteList
