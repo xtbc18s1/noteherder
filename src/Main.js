@@ -64,22 +64,21 @@ class Main extends Component {
     )
   }
 
-  removeCurrentNote = () => {
+  removeNote = (currentNote) => {
     const notes = [...this.state.notes]
-    const i = notes.findIndex(note => note.id === this.state.currentNote.id)
+    const i = notes.findIndex(note => note.id === currentNote.id)
 
     if (i > -1) {
       notes.splice(i, 1)
       this.setState({ notes })
+      this.props.history.push('/notes')
     }
-
-    this.resetCurrentNote()
   }
 
   render() {
     const formProps = {
       saveNote: this.saveNote,
-      removeCurrentNote: this.removeCurrentNote,
+      removeNote: this.removeNote,
       notes: this.state.notes,
     }
 
