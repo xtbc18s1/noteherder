@@ -73,6 +73,7 @@ class Main extends React.Component {
       currentNote: this.state.currentNote,
       saveNote: this.saveNote,
       removeCurrentNote: this.removeCurrentNote,
+      notes: this.state.notes,
     }
 
     return (
