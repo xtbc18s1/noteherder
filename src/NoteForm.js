@@ -16,9 +16,9 @@ class NoteForm extends Component {
 
     // Find the note with that ID
     const i = newProps.notes.findIndex(currentNote => currentNote.id.toString() === newId)
-    const note = newProps.notes[i]
+    const note = newProps.notes[i] || this.blankNote()
 
-    // Update state with that note, if found
+    // Update state with that note
     if (note) {
       this.setState({ note })
     }
