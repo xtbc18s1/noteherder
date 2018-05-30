@@ -10,7 +10,6 @@ class Main extends React.Component {
   constructor() {
     super()
     this.state = {
-      currentNote: this.blankNote(),
       notes: [],
     }
   }
@@ -29,14 +28,6 @@ class Main extends React.Component {
       title: '',
       body: '',
     }
-  }
-
-  setCurrentNote = (note) => {
-    this.setState({ currentNote: note })
-  }
-
-  resetCurrentNote = () => {
-    this.setCurrentNote(this.blankNote())
   }
 
   saveNote = (note) => {
@@ -74,7 +65,6 @@ class Main extends React.Component {
 
   render() {
     const formProps = {
-      currentNote: this.state.currentNote,
       saveNote: this.saveNote,
       removeNote: this.removeNote,
       notes: this.state.notes,
@@ -82,12 +72,8 @@ class Main extends React.Component {
 
     return (
       <div className="Main" style={style}>
-        <Sidebar
-          signOut={this.props.signOut}
-        />
-        <NoteList
-          notes={this.state.notes}
-        />
+        <Sidebar signOut={this.props.signOut} />
+        <NoteList notes={this.state.notes} />
 
         <Switch>
           <Route
