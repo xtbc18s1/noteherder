@@ -10,6 +10,20 @@ class NoteForm extends Component {
     }
   }
 
+  componentWillReceiveProps = (newProps) => {
+    // Get the ID from the URL
+    const newId = newProps.match.params.id
+
+    // Find the note with that ID
+    const i = newProps.notes.findIndex(currentNote => currentNote.id.toString() === newId)
+    const note = newProps.notes[i]
+
+    // Update state with that note, if found
+    if (note) {
+      this.setState({ note })
+    }
+  }
+
   blankNote = () => {
     return {
       id: null,
@@ -28,7 +42,7 @@ class NoteForm extends Component {
   }
 
   render() {
-    const { currentNote, removeCurrentNote } = this.props
+    const { removeCurrentNote } = this.props
     return (
       <div className="NoteForm">
         <div className="form-actions">
