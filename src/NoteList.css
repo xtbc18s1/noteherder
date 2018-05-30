@@ -58,6 +58,15 @@
 .NoteList ul#notes li:hover {
   background-color: #008bf8;
 }
+.NoteList ul#notes a.active li {
+  background-color: #008bf8;
+}
+.NoteList ul#notes a.active li .note,
+.NoteList ul#notes a.active li .note * {
+  color: #fff !important;
+  text-decoration: none !important;
+  border-color: transparent;
+}
 .NoteList ul#notes li:hover,
 .NoteList ul#notes li:hover .note * {
   color: #fff!important;
